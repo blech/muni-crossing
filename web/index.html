@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Crossing</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <h1>Crossing</h1>
+
+    <p id="position">Please wait...</p>
+
+    <script type="text/javascript">
+        function success(position) {
+            console.log(position);
+
+            document.getElementById('position').innerHTML = position.coords.latitude+" "+position.coords.longitude
+
+            
+
+        }
+
+        function error(msg) {
+            // var s = document.querySelector('#status');
+            // s.innerHTML = typeof msg == 'string' ? msg : "failed";
+            // s.className = 'fail';
+
+            console.log(arguments);
+        }
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(success, error);
+        } else {
+            error('not supported');
+        }
+    </script>
+
+</body>
+</html>
