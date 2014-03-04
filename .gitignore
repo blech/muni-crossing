@@ -34,3 +34,10 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# BBEdit
+.bbprojectd
+
+# Finder
+.DS_Store
+
